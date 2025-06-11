@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Generar Código QR{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="data">Texto o URL:</label>
+        <input type="text" name="data" id="data" required>
+        <button type="submit">Generar</button>
+    </form>
+
+    {% if qr_image_url %}
+        <h2>Código QR generado:</h2>
+        <img src="{{ qr_image_url }}" alt="Código QR">
+    {% endif %}
+{% endblock %}

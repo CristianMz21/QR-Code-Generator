@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
-from django.http import HttpResponse
+from .utils.qr import generate_qr_code
+
 
 
 
@@ -10,4 +11,8 @@ class HomeView(View):
         return render(request, 'generate.html')
 
     def post(self, request):
-        return HttpResponse("This is a POST request")
+        data = request.POST.get('data')
+        if data:
+            print(f"Data received for QR code generation: {data}")
+            qr_image_url = generate_qr_code(data)
+        return render(request, 'generate.html', {'qr_image_url': qr_image_url})

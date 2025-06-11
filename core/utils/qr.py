@@ -5,6 +5,12 @@ import base64
 def generate_qr_code(data):
     """
     Genera una imagen QR a partir de una cadena y la devuelve como URL en base64.
+
+    Args:
+        data (str): Texto o URL a codificar en el QR.
+
+    Returns:
+        str: Imagen QR en formato data URL (base64).
     """
     qr = qrcode.QRCode(
         version=1,

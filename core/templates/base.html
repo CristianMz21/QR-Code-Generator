@@ -6,7 +6,83 @@
     <title>{% block title %}QR Generator{% endblock %}</title>
     
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/styles.css' %}"> -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2d3748;
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        main {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .qr-form-container {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            min-width: 340px;
+        }
+        .qr-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .qr-form input[type="text"] {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.2s;
+        }
+        .qr-form input[type="text"]:focus {
+            border: 1.5px solid #3182ce;
+            outline: none;
+        }
+        .qr-form button {
+            background: #3182ce;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .qr-form button:hover {
+            background: #2563eb;
+        }
+        .qr-result {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .qr-result img {
+            margin-top: 1rem;
+            border: 8px solid #f4f6fb;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(49,130,206,0.08);
+        }
+        footer {
+            background: #e2e8f0;
+            color: #4a5568;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 <body>
     <header>

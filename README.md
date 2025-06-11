@@ -6,7 +6,7 @@ Generador de códigos QR usando Django.
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/QR-Code-Generator.git
+   git clone https://github.com/CristianMz21/QR-Code-Generator
    cd QR-Code-Generator
    ```
 2. Instala las dependencias:
